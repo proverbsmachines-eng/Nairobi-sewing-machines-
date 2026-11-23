@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Proverbs Machines Suppliers Ltd — industrial sewing machines, spares and repairs in Ngara, Nairobi.">
+  <title>Proverbs Machines Suppliers Ltd | Sewing Machines Nairobi</title>
+</head>
+<body>
+  <p>Loading Proverbs Machines Suppliers… If the site does not load, <a href="https://github.com/proverbsmachines-eng/Nairobi-sewing-machines-/blob/main/README.md">view the project README</a>.</p>
+  <script>
+    fetch('https://raw.githubusercontent.com/proverbsmachines-eng/Nairobi-sewing-machines-/main/README.md')
+      .then(function (response) {
+        if (!response.ok) throw new Error('Could not load the website source.');
+        return response.text();
+      })
+      .then(function (readme) {
+        var start = readme.indexOf('<!DOCTYPE html>');
+        if (start < 0) start = readme.indexOf('<html');
+        if (start < 0) throw new Error('Website HTML was not found in README.md.');
+        document.open();
+        document.write(readme.slice(start));
+        document.close();
+      })
+      .catch(function () {
+        document.body.innerHTML = '<p>Unable to load the website content. Please check the README source file.</p>';
+      });
+  </script>
+</body>
+</html>
